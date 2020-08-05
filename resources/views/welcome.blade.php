@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Gbot &PI
+                    Gbot &Pi;
                 </div>
 
                 <div class="links">
