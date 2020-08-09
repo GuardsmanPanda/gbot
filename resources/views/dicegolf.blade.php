@@ -7,7 +7,7 @@
 
     <script>
         var table = new Tabulator("#dg-stats", {
-            ajaxURL: "/stats",
+            ajaxURL: "/dicegolf/stats",
             layout:"fitColumns",
             columns:[
                 {title:"ID", field:"id"},
