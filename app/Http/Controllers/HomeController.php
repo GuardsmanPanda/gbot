@@ -7,7 +7,9 @@ use Illuminate\Routing\Controller;
 class HomeController extends Controller {
 
     public function index() {
-        $test = "Hello World!";
+        $temp = [];
+        exec("echo 'text'", $temp);
+        $test = $temp[0];
         return view('welcome', compact('test'));
     }
 }
