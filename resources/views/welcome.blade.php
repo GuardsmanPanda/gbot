@@ -1,5 +1,5 @@
 @extends('layouts.layout')
 
 @section('content')
-GBoT &Pi; -- {{ $test }}
+GBoT &Pi; -- I am {{ $test }} Degrees
 @endsection
