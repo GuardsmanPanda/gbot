@@ -1,5 +1,5 @@
 @extends('layouts.layout')
 
 @section('content')
-    GBoT &Pi;
+    Dicegolf Stats
 @endsection

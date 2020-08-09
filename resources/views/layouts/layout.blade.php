@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">DiceGolf</a>
+                    <a class="nav-link" href="/dicegolf">DiceGolf</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Other Stuff</a>
