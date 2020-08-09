@@ -19,6 +19,6 @@ Route::prefix('dicegolf')->group(function () {
     Route::get('', 'DiceGolfController@index');
 
     Route::prefix('stats')->group(function () {
-        Route::get('', 'DiceGolf@stats_gather');
+        Route::get('', 'DiceGolfController@stats_gather');
     });
 });
