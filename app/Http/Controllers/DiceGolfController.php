@@ -9,4 +9,8 @@ class DiceGolfController extends Controller {
     public function index() {
         return view('dicegolf');
     }
+
+    public function stats_gather() {
+        return [['id' => 1], ['id' => 2]];
+    }
 }

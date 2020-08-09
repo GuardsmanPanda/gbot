@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('', 'HomeController@index');
 
 Route::prefix('dicegolf')->group(function () {
-    Route::get('/', 'DiceGolfController@index');
+    Route::get('', 'DiceGolfController@index');
+
+    Route::prefix('stats')->group(function () {
+        Route::get('', 'DiceGolf@stats_gather');
+    });
 });
