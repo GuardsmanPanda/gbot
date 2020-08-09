@@ -8,6 +8,6 @@ class HomeController extends Controller {
 
     public function index() {
         $test = "Hello World!";
-        return view('welcome', compact($test));
+        return view('welcome', compact('test'));
     }
 }
