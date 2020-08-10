@@ -68,7 +68,6 @@ h1, h2, h3, h4, h5 {
     bottom: -0.313em;
     left: -0.313em;
     border-radius: 0.313em 0 0 0.313em;
-    box-sizing: unset;
     box-shadow: inset -1px 2px 2px rgba(0,0,0,0.3);
 }
 

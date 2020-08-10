@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class DiceGolfController extends Controller {
 
@@ -11,6 +12,6 @@ class DiceGolfController extends Controller {
     }
 
     public function stats_gather() {
-        return [['id' => 1], ['id' => 2]];
+        return DB::select("SELECT * FROM dicegolf");
     }
 }
