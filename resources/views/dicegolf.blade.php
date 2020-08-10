@@ -20,9 +20,10 @@
             layout:"fitColumns",
             columns:[
                 {title:"Twitch Name", field:"name"},
-                {title:"Length", field:"length", formatter:"progress", width:200},
+                {title:"Length", field:"length"},
                 {title:"Total", field:"sum"},
                 {title:"Game", field:"game"},
+                {title:"Played At", field:"created_at", formatter:"datetime"}
             ],
         });
     </script>

@@ -12,6 +12,15 @@ class DiceGolfController extends Controller {
     }
 
     public function stats_gather() {
-        return DB::select("SELECT * FROM dicegolf");
+        return DB::select("
+            SELECT
+                t.name,
+                d.*
+            FROM dicegolf AS d
+            LEFT JOIN tuis AS t ON d.tui = t.id
+            ORDER BY
+                d.length DESC
+            LIMIT 50
+            ");
     }
 }
