@@ -14,7 +14,6 @@ class DiceGolfController extends Controller {
     public function stats_gather() {
         return DB::select("
             SELECT
-                t.name,
                 d.*
             FROM dicegolf AS d
             LEFT JOIN tuis AS t ON d.tui = t.id
