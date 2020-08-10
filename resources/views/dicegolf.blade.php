@@ -15,9 +15,10 @@
             ajaxURL: "/dicegolf/stats",
             layout:"fitColumns",
             columns:[
+                {title:"ID", field:"id", headerSort:false},
                 {title:"Twitch Name", field:"name", headerSort:false},
-                {title:"Length", field:"length", sorter:"number"},
-                {title:"Total", field:"sum", sorter:"number"},
+                {title:"Length", field:"length"},
+                {title:"Total", field:"sum"},
                 {title:"Game", field:"game"},
                 {title:"Played At", field:"created_at", formatter:"datetime"}
             ],
