@@ -1,20 +1,25 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div id="dg-stats"></div>
+    <div class="content">
+        <h1 class="ribbon">Just a Rounded Ribbon</h1>
+        <h5>Responsive? Resize the window.</h5>
+        <div id="dg-stats"></div>
+    </div>
+
 
 
 
     <script>
-        var table = new Tabulator("#dg-stats", {
+        const table = new Tabulator("#dg-stats", {
             ajaxURL: "/dicegolf/stats",
             layout:"fitColumns",
             columns:[
                 {title:"ID", field:"id"},
+                {title:"Length", field:"length"},
+                {title:"Total", field:"sum"},
+                {title:"Game", field:"game"},
             ],
-            rowClick:function(e, row){ //trigger an alert message when the row is clicked
-                alert("Row " + row.getData().id + " Clicked!!!!");
-            },
         });
     </script>
 @endsection
