@@ -13,10 +13,6 @@
     <script>
         const table = new Tabulator("#dg-stats", {
             ajaxURL: "/dicegolf/stats",
-            initialSort: [
-                {column:"Length", dir:"desc"},
-                {column:"Total", dir:"desc"}
-            ],
             layout:"fitColumns",
             columns:[
                 {title:"Twitch Name", field:"name", headerSort:false},
