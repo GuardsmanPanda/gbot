@@ -13,7 +13,7 @@
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.7.2/dist/js/tabulator.min.js"></script>
 </head>
 <body class="bg-dark" style="color: seashell">
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="border-bottom-style: ridge; border-bottom-color: gold;">
         <a class="navbar-brand" href="/">GBot</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
