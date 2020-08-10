@@ -14,14 +14,14 @@
         const table = new Tabulator("#dg-stats", {
             ajaxURL: "/dicegolf/stats",
             initialSort: [
-                {column:"length", dir:"desc"},
-                {column:"sum", dir:"desc"}
+                {column:"Length", dir:"desc"},
+                {column:"Total", dir:"desc"}
             ],
             layout:"fitColumns",
             columns:[
-                {title:"Twitch Name", field:"name"},
-                {title:"Length", field:"length"},
-                {title:"Total", field:"sum"},
+                {title:"Twitch Name", field:"name", headerSort:false},
+                {title:"Length", field:"length", sorter:"number"},
+                {title:"Total", field:"sum", sorter:"number"},
                 {title:"Game", field:"game"},
                 {title:"Played At", field:"created_at", formatter:"datetime"}
             ],
