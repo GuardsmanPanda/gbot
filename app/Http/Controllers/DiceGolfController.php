@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 class DiceGolfController extends Controller {
 
     public function index() {
-        return view('dicegolf');
+        $p_max = DB::select("SELECT MAX(length) AS ml, MAX(sum) AS ms, FROM dicegolf")[0];
+        return view('dicegolf', compact('p_max'));
     }
 
     public function stats_gather() {
