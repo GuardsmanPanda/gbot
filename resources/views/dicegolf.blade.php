@@ -3,11 +3,9 @@
 @section('content')
     <div class="ribbon-content">
         <h1 class="ribbon">DiceGolf-v2 Stats</h1>
-        <h5 class="mt-2">Sort By Most Throws or Highest Sum! {{$p_max}}</h5>
+        <h5 class="mt-2">Sort By Most Throws or Highest Sum! {{$p_max->ms}}</h5>
         <div id="dg-stats"></div>
     </div>
-
-
 
 
     <script>
