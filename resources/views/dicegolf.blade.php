@@ -18,8 +18,9 @@
             ],
             layout: "fitData",
             columns:[
+                {title:"Rank", field:"rank", sorter: "numeric"},
                 {title:"Twitch Name", field:"name", headerSort:false},
-                {title:"Length", field:"length", width:210, sorter:"number", formatter:"progress", formatterParams:{
+                {title:"Length", field:"length", width:210, sorter:"numeric", formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$p_max->ml}},
                         color:"lightGreen",
@@ -27,7 +28,7 @@
                         legendColor:"#000000",
                         legendAlign:"center",
                     }},
-                {title:"Total", field:"sum", width:210, sorter:"number", formatter:"progress", formatterParams:{
+                {title:"Total", field:"sum", width:210, sorter:"numeric", formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$p_max->ms}},
                         color:"lightGreen",
