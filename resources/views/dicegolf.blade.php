@@ -4,14 +4,14 @@
     <div class="ribbon-content">
         <h1 class="ribbon">DiceGolf-v2 Stats</h1>
         <h5 class="mt-2">Sort By Most Throws or Highest Sum!</h5>
-        <div id="dg-stats" style="height: 75vh"></div>
+        <div id="dg-stats"></div>
     </div>
 
 
     <script>
         const table = new Tabulator("#dg-stats", {
             ajaxURL: "/dicegolf/stats",
-            height: "100%",
+            height: "75vh",
             initialSort: [
                 {column:"Length", dir:"desc"},
                 {column:"Total", dir:"desc"}
