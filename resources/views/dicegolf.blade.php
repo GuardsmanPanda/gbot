@@ -13,8 +13,7 @@
             ajaxURL: "/dicegolf/stats",
             height: "75vh",
             initialSort: [
-                {column:"Length", dir:"desc"},
-                {column:"Total", dir:"desc"}
+                {column:"rank", dir:"asc"},
             ],
             layout: "fitData",
             columns:[

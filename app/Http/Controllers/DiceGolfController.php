@@ -16,12 +16,10 @@ class DiceGolfController extends Controller {
         return DB::select("
             SELECT
                 t.name,
-                ROW_NUMBER() OVER (ORDER BY d.length DESC) AS rank,
+                ROW_NUMBER() OVER (ORDER BY d.length DESC, d.sum DESC) AS rank,
                 d.*
             FROM dicegolf AS d
             LEFT JOIN tuis AS t ON d.tui = t.id
-            ORDER BY
-                d.length DESC
             LIMIT 100
             ");
     }
