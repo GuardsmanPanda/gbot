@@ -36,7 +36,7 @@
                         legendAlign:"center",
                     }},
                 {title:"Game", field:"game"},
-                {title:"Played At", field:"created_at", formatter:"datetime"}
+                {title:"Played At", field:"created_at", formatter:"datetimediff", formatterParams:{humanize:true, suffix: true}}
             ],
         });
     </script>
