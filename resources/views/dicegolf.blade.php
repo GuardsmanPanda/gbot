@@ -38,7 +38,6 @@
                 {title:"Game", field:"game"},
                 {title:"Played At", field:"created_at", formatter:"datetimediff", formatterParams: {
                     humanize:true,
-                    date: {{gmdate("Y-m-d\TH:i:s\Z")}},
                     suffix: true
                 }}
             ],
