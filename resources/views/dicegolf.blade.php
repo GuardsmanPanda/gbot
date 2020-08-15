@@ -18,7 +18,7 @@
             ],
             layout: "fitData",
             columns:[
-                {title:"Rank", field:"rank", formatter:"rownum", sorter: "numeric"},
+                {title:"Rank", field:"rank", formatter:"rownum", headerSort:false},
                 {title:"Twitch Name", field:"name", headerSort:false},
                 {title:"Length", field:"length", width:210, sorter:"numeric", headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{
