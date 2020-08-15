@@ -11,6 +11,7 @@
     <script>
         const table = new Tabulator("#dg-stats", {
             ajaxURL: "/dicegolf/stats",
+            ajaxSorting: true,
             height: "75vh",
             initialSort: [
                 {column:"rank", dir:"asc"},
@@ -19,7 +20,8 @@
             columns:[
                 {title:"Rank", field:"rank", sorter: "numeric"},
                 {title:"Twitch Name", field:"name", headerSort:false},
-                {title:"Length", field:"length", width:210, sorter:"numeric", formatter:"progress", formatterParams:{
+                {title:"Length", field:"length", width:210, sorter:"numeric", headerSortStartingDir:"desc",
+                    formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$p_max->ml}},
                         color:"lightGreen",
@@ -27,7 +29,8 @@
                         legendColor:"#000000",
                         legendAlign:"center",
                     }},
-                {title:"Total", field:"sum", width:210, sorter:"numeric", formatter:"progress", formatterParams:{
+                {title:"Total", field:"sum", width:210, sorter:"numeric", headerSortStartingDir:"desc",
+                    formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$p_max->ms}},
                         color:"lightGreen",
