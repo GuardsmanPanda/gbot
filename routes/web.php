@@ -18,7 +18,5 @@ Route::get('', 'HomeController@index');
 Route::prefix('dicegolf')->group(function () {
     Route::get('', 'DiceGolfController@index');
 
-    Route::prefix('stats')->group(function () {
-        Route::get('', 'DiceGolfController@stats_gather');
-    });
+    Route::get('stats', 'DiceGolfController@stats_gather');
 });
