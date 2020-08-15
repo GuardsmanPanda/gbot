@@ -14,11 +14,11 @@
             ajaxSorting: true,
             height: "75vh",
             initialSort: [
-                {column:"rank", dir:"asc"},
+                {column:"length", dir:"desc"},
             ],
             layout: "fitData",
             columns:[
-                {title:"Rank", field:"rank", sorter: "numeric"},
+                {title:"Rank", field:"rank", formatter:"rownum", sorter: "numeric"},
                 {title:"Twitch Name", field:"name", headerSort:false},
                 {title:"Length", field:"length", width:210, sorter:"numeric", headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{
