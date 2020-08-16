@@ -25,8 +25,14 @@
                     maxLen = Math.max(maxLen, row.length);
                     maxSum = Math.max(maxSum, row.sum);
                 });
-                table.updateColumnDefinition("length", { formatterParams:{max:maxLen}});
-                table.updateColumnDefinition("sum", { formatterParams:{
+                table.updateColumnDefinition("length", { formatter:"progress", formatterParams:{
+                        max:maxLen,
+                        color:"lightGreen",
+                        legend:true,
+                        legendColor:"#000000",
+                        legendAlign:"center",
+                    }});
+                table.updateColumnDefinition("sum", { formatter:"progress", formatterParams:{
                         max:maxSum,
                         color:"lightGreen",
                         legend:true,
@@ -40,26 +46,8 @@
             columns:[
                 {title:"Rank", field:"rank", formatter:"rownum", headerSort:false},
                 {title:"Twitch Name", field:"name", headerSort:false},
-                {title:"Length", field:"length", width:210, sorter:"number", headerSortStartingDir:"desc",
-                    formatter:"progress", formatterParams:{
-                        min:0,
-                        max:{{$p_max->ml}},
-                        color:"lightGreen",
-                        legend:true,
-                        legendColor:"#000000",
-                        legendAlign:"center",
-                    }
-                },
-                {title:"Total", field:"sum", width:210, sorter:"number", headerSortStartingDir:"desc",
-                    formatter:"progress", formatterParams:{
-                        min:0,
-                        max:{{$p_max->ms}},
-                        color:"lightGreen",
-                        legend:true,
-                        legendColor:"#000000",
-                        legendAlign:"center",
-                    }
-                },
+                {title:"Length", field:"length", width:210, sorter:"number", headerSortStartingDir:"desc"},
+                {title:"Total", field:"sum", width:210, sorter:"number", headerSortStartingDir:"desc"},
                 {title:"Game", field:"game", headerSort:false, headerFilter:"number"},
                 {title:"Played At", field:"created_at", formatter:"datetimediff", formatterParams: {
                         humanize:true,
