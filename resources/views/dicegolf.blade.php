@@ -69,7 +69,7 @@
             autoColumns:true,
         });
 
-        const dg1 = new Tabulator("#dg-most-games", {
+        const dg2 = new Tabulator("#dg-most-games", {
             ajaxURL: "/dicegolf/most-games",
             autoColumns:true,
         });
