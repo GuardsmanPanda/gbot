@@ -32,7 +32,7 @@ class DiceGolfController extends Controller {
 
     public function most_games() {
         return return DB::select("SELECT
-            t.name, count(*) as amount
+            t.name, count(t.name) as amount
             FROM dicegolf AS d
             LEFT JOIN tuis AS t ON d.tui = t.id
             GROUP BY t.name
