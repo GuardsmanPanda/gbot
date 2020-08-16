@@ -27,7 +27,7 @@
                 });
                 console.log(maxLen);
                 console.log(maxSum);
-                let col = table.getColumn('length');
+                let col = table.getColumn('Length');
                 console.log(Object.getOwnPropertyNames(col).filter(function (x) {
                     return typeof col[x] === 'function'
                 }));
