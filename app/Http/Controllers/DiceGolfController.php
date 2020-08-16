@@ -29,4 +29,23 @@ class DiceGolfController extends Controller {
             LIMIT 100
             ", [$r->get('start')]);
     }
+
+    public function most_games() {
+        return "";
+    }
+
+    public function most_popular() {
+        return "";
+    }
+
+    public function hole_in_one() {
+        return DB::select("SELECT
+            t.name, d.game, d.created_at
+            FROM dicegolf AS d
+            LEFT JOIN tuis AS t ON d.tui = t.id
+            WHERE d.length = 1
+            ORDER BY d.start desc, d.created_at
+            LIMIT 100
+            ");
+    }
 }
