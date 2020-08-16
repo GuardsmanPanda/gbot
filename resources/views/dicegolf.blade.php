@@ -25,8 +25,14 @@
                     maxLen = Math.max(maxLen, row.length);
                     maxSum = Math.max(maxSum, row.sum);
                 });
-                table.updateColumnDefinition("length", {formatterParams:{max:maxLen}});
-                table.updateColumnDefinition("sum", {formatterParams:{max:maxSum}});
+                table.updateColumnDefinition("length", { formatterParams:{max:maxLen}});
+                table.updateColumnDefinition("sum", { formatterParams:{
+                        max:maxSum,
+                        color:"lightGreen",
+                        legend:true,
+                        legendColor:"#000000",
+                        legendAlign:"center",
+                    }});
                 return response; //return the response data to tabulator
             },
             height: "75vh",
