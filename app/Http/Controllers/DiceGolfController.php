@@ -27,6 +27,6 @@ class DiceGolfController extends Controller {
             LEFT JOIN tuis AS t ON d.tui = t.id
             WHERE d.start = ?
             LIMIT 100
-            ", $start);
+            ", [$start]);
     }
 }
