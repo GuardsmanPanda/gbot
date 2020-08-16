@@ -28,9 +28,16 @@
                 console.log(maxLen);
                 console.log(maxSum);
                 let col = table.getColumn('length');
-                console.log(Object.getOwnPropertyNames(col).filter(function (x) {
-                    return typeof col[x] === 'function'
-                }));
+                col.updateDefinition({title:"Length", field:"length", width:210, sorter:"number", headerSortStartingDir:"desc",
+                    formatter:"progress", formatterParams:{
+                        min:0,
+                        max:maxLen,
+                        color:"lightGreen",
+                        legend:true,
+                        legendColor:"#000000",
+                        legendAlign:"center",
+                    }
+                });
               //  table.updateColumnDefinition("length", {title:"Length", field:"length", formatterParams: {max: maxLen}});
                 return response; //return the response data to tabulator
             },
