@@ -15,7 +15,7 @@ class DiceGolfController extends Controller {
     }
 
     public function stats_gather(Request $r) {
-        $start = intval($r->get('game') ?? 100);
+        $start = intval($r->get('filters[0][value]') ?? 100);
         $start = min($start, 2147483647);
         $start = max($start, 2);
         return DB::select("

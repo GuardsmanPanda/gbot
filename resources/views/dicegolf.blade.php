@@ -10,7 +10,7 @@
 
     <script>
         const table = new Tabulator("#dg-stats", {
-            ajaxURL: "/dicegolf/stats?game=100",
+            ajaxURL: "/dicegolf/stats",
             ajaxFiltering: true,
             initialHeaderFilter:[
                 {field:"game", value:"100"}
