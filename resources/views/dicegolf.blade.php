@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="ribbon-content">
-        <h1 class="ribbon">DiceGolf-v2 Stats</h1>
+        <h1 class="ribbon">DiceGolf-v3 Stats</h1>
         <h5 class="mt-2">Sort By Most Throws or Highest Sum!</h5>
         <div id="dg-stats"></div>
     </div>
@@ -10,7 +10,7 @@
 
     <script>
         const table = new Tabulator("#dg-stats", {
-            ajaxURL: "/dicegolf/stats",
+            ajaxURL: "/dicegolf/stats?game=100",
             ajaxSorting: true,
             height: "75vh",
             initialSort: [
