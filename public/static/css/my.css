@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5 {
     color: #292929;
 }
 
-.ribbon{
+.ribbon-title{
     position:relative;
     padding: 0 0.5em;
     font-size:2.000em;
@@ -44,14 +44,14 @@ h1, h2, h3, h4, h5 {
     box-shadow: -1px 2px 3px rgba(0,0,0,0.5);
 }
 
-.ribbon:before, .ribbon:after{
+.ribbon-title:before, .ribbon-title:after{
     position:absolute;
     content: '';
     display: block;
 
 }
 
-.ribbon:before{
+.ribbon-title:before{
     width: 0.469em;
     height: 100%;
     padding: 0 0 0.438em;
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5 {
     border-radius: 0.313em 0 0 0.313em;
 }
 
-.ribbon:after{
+.ribbon-title:after{
     width: 0.313em;
     height: 0.313em;
     background: rgba(0,0,0,0.35);
@@ -69,21 +69,4 @@ h1, h2, h3, h4, h5 {
     left: -0.313em;
     border-radius: 0.313em 0 0 0.313em;
     box-shadow: inset -1px 2px 2px rgba(0,0,0,0.3);
-}
-
-@media (max-width: 600px) {
-
-    body{
-        font-size:0.875em;
-    }
-
-    .ribbon{
-        line-height: 1.143em;
-        padding: 0.5em;
-    }
-
-    .ribbon:before, .ribbon:after{
-        font-size: 0.714em;
-    }
-
 }

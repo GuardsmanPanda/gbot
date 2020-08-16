@@ -2,17 +2,23 @@
 
 @section('content')
     <div class="ribbon-content">
-        <h1 class="ribbon">DiceGolf-v3 Stats</h1>
+        <h1 class="ribbon-title">DiceGolf Stats</h1>
         <h5 class="mt-2">Sort By Most Throws or Highest Sum!</h5>
         <div id="dg-stats"></div>
     </div>
 
+    <div class="ribbon-content">
+        <h1 class="ribbon-title">DiceGolf Information</h1>
+        <h5 class="mt-2">To Play Type !dg Number in Twitch Chat!</h5>
+        <div id="dg-info"></div>
+    </div>
 
+    
     <script>
         const table = new Tabulator("#dg-stats", {
             ajaxURL: "/dicegolf/stats?start={{$start}}",
             ajaxSorting: true,
-            height: "75vh",
+            maxHeight: "75vh",
             initialSort: [
                 {column:"length", dir:"desc"},
             ],
