@@ -17,7 +17,7 @@ class DiceGolfController extends Controller {
         return view('dicegolf', compact('p_max', 'start'));
     }
 
-    public function stats_gather(Request $r) {
+    public function stats(Request $r) {
         return DB::select("
             SELECT
                 t.name,

@@ -18,8 +18,8 @@ Route::get('', 'HomeController@index');
 Route::prefix('dicegolf')->group(function () {
     Route::get('', 'DiceGolfController@index');
 
-    Route::get('stats', 'DiceGolfController@stats_gather');
-    Route::get('most-games', 'DiceGolfController@most_games_gather');
-    Route::get('hole-in-one', 'DiceGolfController@hole_in_one_gather');
-    Route::get('most-popular', 'DiceGolfController@most_popular_gather');
+    Route::get('stats', 'DiceGolfController@stats');
+    Route::get('most-games', 'DiceGolfController@most_games');
+    Route::get('hole-in-one', 'DiceGolfController@hole_in_one');
+    Route::get('most-popular', 'DiceGolfController@most_popular');
 });
