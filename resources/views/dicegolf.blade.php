@@ -25,20 +25,8 @@
                     maxLen = Math.max(maxLen, row.length);
                     maxSum = Math.max(maxSum, row.sum);
                 });
-                console.log(maxLen);
-                console.log(maxSum);
-                let col = table.getColumn('length');
-                col.updateDefinition({title:"Length", field:"length", width:210, sorter:"number", headerSortStartingDir:"desc",
-                    formatter:"progress", formatterParams:{
-                        min:0,
-                        max:maxLen,
-                        color:"lightGreen",
-                        legend:true,
-                        legendColor:"#000000",
-                        legendAlign:"center",
-                    }
-                });
-              //  table.updateColumnDefinition("length", {title:"Length", field:"length", formatterParams: {max: maxLen}});
+                table.updateColumnDefinition("length", {formatterParams:{max:maxLen}});
+                table.updateColumnDefinition("sum", {formatterParams:{max:maxSum}});
                 return response; //return the response data to tabulator
             },
             height: "75vh",
