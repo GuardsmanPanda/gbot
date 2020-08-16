@@ -19,6 +19,13 @@
             initialSort: [
                 {column:"length", dir:"desc"},
             ],
+            ajaxResponse:function(url, params, response){
+                let maxLen = 1, maxSum = 1;
+                response.forEach(row => {
+                    console.log(row);
+                });
+                return response; //return the response data to tabulator
+            },
             height: "75vh",
             layout: "fitData",
             columns:[
