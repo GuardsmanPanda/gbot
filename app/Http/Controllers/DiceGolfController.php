@@ -31,7 +31,14 @@ class DiceGolfController extends Controller {
     }
 
     public function most_games() {
-        return "";
+        return return DB::select("SELECT
+            t.name, count(*) as amount
+            FROM dicegolf AS d
+            LEFT JOIN tuis AS t ON d.tui = t.id
+            GROUP BY t.name
+            ORDER by amount desc
+            LIMIT 100
+            ");
     }
 
     public function most_popular() {

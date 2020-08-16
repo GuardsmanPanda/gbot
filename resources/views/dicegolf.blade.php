@@ -68,5 +68,10 @@
             ajaxURL: "/dicegolf/hole-in-one",
             autoColumns:true,
         });
+
+        const dg1 = new Tabulator("#dg-most-games", {
+            ajaxURL: "/dicegolf/most-games",
+            autoColumns:true,
+        });
     </script>
 @endsection
