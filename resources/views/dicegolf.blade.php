@@ -10,10 +10,19 @@
     <div class="ribbon-content">
         <h1 class="ribbon-title">DiceGolf Information</h1>
         <h5 class="mt-2">To Play Type !dg Number in Twitch Chat!</h5>
-        <div id="dg-info"></div>
+        <div class="container">
+            <div class="row">
+                <div id="dg-hole-in-one">
+                </div>
+                <div id="dg-most-games">
+                </div>
+                <div id="dg-most-popular">
+                </div>
+            </div>
+        </div>
     </div>
 
-    
+
     <script>
         const table = new Tabulator("#dg-stats", {
             ajaxURL: "/dicegolf/stats?start={{$start}}",
@@ -51,6 +60,13 @@
                     }
                 }
             ],
+        });
+    </script>
+
+    <script>
+        const dg1 = new Tabulator("#dg-hole-in-one", {
+            ajaxURL: "/dicegolf/hole-in-one",
+            autoColumns:true,
         });
     </script>
 @endsection

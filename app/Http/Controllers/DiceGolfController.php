@@ -25,6 +25,7 @@ class DiceGolfController extends Controller {
             FROM dicegolf AS d
             LEFT JOIN tuis AS t ON d.tui = t.id
             WHERE d.start = ?
+            ORDER BY d.length desc, d.sum desc
             LIMIT 100
             ", [$r->get('start')]);
     }
