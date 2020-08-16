@@ -29,7 +29,7 @@
                 console.log(maxSum);
                 let col = table.getColumn('length');
                 console.log(Object.getOwnPropertyNames(col).filter(function (x) {
-                    return typeof classobj[x] === 'function'
+                    return typeof col[x] === 'function'
                 }));
               //  table.updateColumnDefinition("length", {title:"Length", field:"length", formatterParams: {max: maxLen}});
                 return response; //return the response data to tabulator
