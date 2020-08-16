@@ -22,8 +22,11 @@
             ajaxResponse:function(url, params, response){
                 let maxLen = 1, maxSum = 1;
                 response.forEach(row => {
-                    console.log(row);
+                    maxLen = Math.max(maxLen, row.length);
+                    maxSum = Math.max(maxLen, row.sum);
                 });
+                console.log(maxLen);
+                console.log(maxSum);
                 return response; //return the response data to tabulator
             },
             height: "75vh",
