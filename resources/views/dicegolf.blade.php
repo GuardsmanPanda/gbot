@@ -27,7 +27,11 @@
                 });
                 console.log(maxLen);
                 console.log(maxSum);
-                table.updateColumnDefinition("length", {title:"Length", field:"length", formatterParams: {max: maxLen}});
+                let col = table.getColumn('length');
+                console.log(Object.getOwnPropertyNames(col).filter(function (x) {
+                    return typeof classobj[x] === 'function'
+                }));
+              //  table.updateColumnDefinition("length", {title:"Length", field:"length", formatterParams: {max: maxLen}});
                 return response; //return the response data to tabulator
             },
             height: "75vh",
