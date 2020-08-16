@@ -27,7 +27,7 @@
                 });
                 console.log(maxLen);
                 console.log(maxSum);
-                table.updateColumnDefinition("length", {formatterParams: {max: maxLen}});
+                table.updateColumnDefinition("length", {title:"Length", field:"length", formatterParams: {max: maxLen}});
                 return response; //return the response data to tabulator
             },
             height: "75vh",
