@@ -53,7 +53,7 @@
                         legendColor:"#000000",
                         legendAlign:"center",
                     }},
-                {title:"Game", field:"game"},
+                {title:"Game", field:"game", headerSort:false},
                 {title:"Played At", field:"created_at", formatter:"datetimediff", formatterParams: {
                         humanize:true,
                         suffix: true
@@ -71,6 +71,11 @@
 
         const dg2 = new Tabulator("#dg-most-games", {
             ajaxURL: "/dicegolf/most-games",
+            autoColumns:true,
+        });
+
+        const dg3 = new Tabulator("#dg-most-popular", {
+            ajaxURL: "/dicegolf/most-popular",
             autoColumns:true,
         });
     </script>

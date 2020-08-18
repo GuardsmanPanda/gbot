@@ -42,17 +42,24 @@ class DiceGolfController extends Controller {
     }
 
     public function most_popular() {
-        return "";
+        return DB::select("
+            SELECT
+                start AS Game, COUNT(start) AS Amount
+            FROM dicegolf
+            GROUP BY start
+            ORDER BY Amount desc
+        ");
     }
 
     public function hole_in_one() {
-        return DB::select("SELECT
-            t.name, d.game, d.created_at
+        return DB::select("
+            SELECT
+                t.name, d.game, d.created_at
             FROM dicegolf AS d
             LEFT JOIN tuis AS t ON d.tui = t.id
             WHERE d.length = 1
             ORDER BY d.start desc, d.created_at
             LIMIT 100
-            ");
+        ");
     }
 }
