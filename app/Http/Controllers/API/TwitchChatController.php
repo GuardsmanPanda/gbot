@@ -10,6 +10,10 @@ use Ramsey\Uuid\Type\Integer;
 class TwitchChatController extends Controller {
 
     public function get_badge(string $name) {
-        return '1';
+        $flag = DB::select("
+            SELECT tu.flag
+            FROM twitch_name_to_tui AS t
+            LEFT JOIN tuis AS tu ON tu.id = t.tui");
+        return $flag;
     }
 }
