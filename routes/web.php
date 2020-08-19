@@ -23,3 +23,5 @@ Route::prefix('dicegolf')->group(function () {
     Route::get('hole-in-one', 'DiceGolfController@hole_in_one');
     Route::get('most-popular', 'DiceGolfController@most_popular');
 });
+
+

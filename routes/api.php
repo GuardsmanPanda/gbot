@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 | });
 */
 
+Route::get('twitch-chat', 'API/TwitchChatController@index');
+

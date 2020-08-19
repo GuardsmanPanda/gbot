@@ -32,6 +32,9 @@
                     <a class="nav-link" href="/dicegolf">DiceGolf</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/experiments">Experimental</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Other Stuff</a>
                 </li>
             </ul>

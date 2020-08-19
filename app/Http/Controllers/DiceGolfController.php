@@ -48,6 +48,7 @@ class DiceGolfController extends Controller {
             FROM dicegolf
             GROUP BY start
             ORDER BY Amount desc
+            LIMIT 100
         ");
     }
 
