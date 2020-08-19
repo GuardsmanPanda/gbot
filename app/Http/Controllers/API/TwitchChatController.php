@@ -13,7 +13,8 @@ class TwitchChatController extends Controller {
         $flag = DB::select("
             SELECT tu.flag
             FROM twitch_name_to_tui AS t
-            LEFT JOIN tuis AS tu ON tu.id = t.tui");
+            LEFT JOIN tuis AS tu ON tu.id = t.tui
+            WHERE t.twitch_name = ? ", [$name]);
         return $flag;
     }
 }
