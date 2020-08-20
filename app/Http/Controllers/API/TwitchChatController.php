@@ -14,7 +14,7 @@ class TwitchChatController extends Controller {
             SELECT tu.flag
             FROM twitch_name_to_tui AS t
             LEFT JOIN tuis AS tu ON tu.id = t.tui
-            WHERE t.twitch_name = ? ", [$name])[0]->flag ?? 'none';
+            WHERE t.twitch_name = ? ", [mb_strtolower($name)])[0]->flag ?? 'none';
 
         return response()->file(resource_path("img/flags/$flag.png"));
     }
