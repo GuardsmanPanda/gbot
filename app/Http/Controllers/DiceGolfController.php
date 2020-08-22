@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dicegolf;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +19,9 @@ class DiceGolfController extends Controller {
     }
 
     public function stats(Request $r) {
+        return $r->all();
+        switch ($r->get('sorters')[0]) {
+        }
         return DB::select("
             SELECT
                 t.name,
