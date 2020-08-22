@@ -19,8 +19,10 @@ class DiceGolfController extends Controller {
     }
 
     public function stats(Request $r) {
-        return $r->all();
-        switch ($r->get('sorters')[0]) {
+        switch ($r->get('sorters')[0]['field'] ?? '') {
+            case "sum": $order = "d.sum desc, d.length, d.created_at"; break;
+            case "created_at": $order = "created_at desc"; break;
+            default: $order = "d.length desc, d.sum desc, d.created_at"; break;
         }
         return DB::select("
             SELECT
@@ -29,7 +31,7 @@ class DiceGolfController extends Controller {
             FROM dicegolf AS d
             LEFT JOIN tuis AS t ON d.tui = t.id
             WHERE d.start = ?
-            ORDER BY d.length desc, d.sum desc
+            ORDER BY $order
             LIMIT 100
             ", [$r->get('start')]);
     }
