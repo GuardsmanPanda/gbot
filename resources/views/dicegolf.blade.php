@@ -54,7 +54,7 @@
                         legendAlign:"center",
                     }},
                 {title:"Game", field:"game", headerSort:false},
-                {title:"Played At", field:"created_at", mutator:tabulatorUTCToLocal,
+                {title:"Played At", width:128, field:"created_at", mutator:tabulatorUTCToLocal,
                     formatter:"datetimediff", formatterParams: {
                         humanize:true,
                         suffix: true
