@@ -45,7 +45,7 @@
                         legendAlign:"center",
                     }},
                 {title:"Total", field:"sum", width:210, sorter:"numeric", headerSortStartingDir:"desc",
-                    formatter:"progress", formatterParams:{
+                    formatter:"progress", formatterParams: {
                         min:0,
                         max:{{$p_max->ms}},
                         color:"lightGreen",
@@ -54,8 +54,8 @@
                         legendAlign:"center",
                     }},
                 {title:"Game", field:"game", headerSort:false},
-                {title:"Played At", field:"created_at", formatter:"datetimediff", formatterParams: {
-                        date: moment().utc(),
+                {title:"Played At", field:"created_at", mutator:tabulatorUTCToLocal,
+                    formatter:"datetimediff", formatterParams: {
                         humanize:true,
                         suffix: true
                     }

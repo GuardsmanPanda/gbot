@@ -15,6 +15,7 @@
     <script src="/static/js/jquery-3.5.1.slim.min.js"></script>
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/my.js"></script>
 
     <link href="/static/css/tabulator.min.css" rel="stylesheet">
     <script type="text/javascript" src="/static/js/tabulator.min.js"></script>
