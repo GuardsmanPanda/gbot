@@ -55,6 +55,7 @@
                     }},
                 {title:"Game", field:"game", headerSort:false},
                 {title:"Played At", field:"created_at", formatter:"datetimediff", formatterParams: {
+                        date: moment().utc(),
                         humanize:true,
                         suffix: true
                     }
