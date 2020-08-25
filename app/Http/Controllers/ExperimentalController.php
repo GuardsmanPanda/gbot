@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class ExperimentalController extends Controller {
 
@@ -18,6 +19,7 @@ class ExperimentalController extends Controller {
             $resp = Http::post($prefix . "&client_secret=" . env('TWITCH_SECRET') . "&scope=" . $r->get('scope' . "&code=" . $r->get('code')))->json();
             return 'ok - expires in: ' . $resp['expires_in'];
         } catch (\Exception $e) {
+            Log::warning('Error on twitch Auth ' . $e->getMessage());
             return 'Not ok';
         }
     }
