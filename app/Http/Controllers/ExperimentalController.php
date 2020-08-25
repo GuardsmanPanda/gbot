@@ -15,7 +15,7 @@ class ExperimentalController extends Controller {
 
     public function login_twitch(Request $r) {
         try {
-            $prefix = "https://id.twitch.tv/oauth2/authorize?client_id=q8q6jjiuc7f2ef04wmb7m653jd5ra8&redirect_uri=https://gman.bot/oauth/twitch";
+            $prefix = "https://id.twitch.tv/oauth2/token?client_id=q8q6jjiuc7f2ef04wmb7m653jd5ra8&redirect_uri=https://gman.bot/oauth/twitch";
             $resp = Http::post($prefix . "&client_secret=" . env('TWITCH_SECRET') . "&scope=" . $r->get('scope') . "&code=" . $r->get('code'))->json();
             if (!in_array('expires_in', $resp)) Log::warning('Error on twitch Auth ' . json_encode($resp));
             return 'ok - expires in: ' . $resp['expires_in'];
