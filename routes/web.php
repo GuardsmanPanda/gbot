@@ -24,5 +24,5 @@ Route::prefix('dicegolf')->group(function () {
     Route::get('most-popular', 'DiceGolfController@most_popular');
 });
 
-Route::get('experimental', 'ExperimentalController@index');
+Route::get('experiments', 'ExperimentalController@index');
 Route::get('oauth/twitch', 'ExperimentalController@login_twitch');
