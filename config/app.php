@@ -27,6 +27,7 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    'twitch_secret' => env('TWITCH_SECRET'),
 
     /*
     |--------------------------------------------------------------------------
