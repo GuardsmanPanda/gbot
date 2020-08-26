@@ -39,7 +39,8 @@ class ExperimentalController extends Controller {
                 Log::warning($resp->body());
                 return 'Getting Twitch ID Failed.';
             }
-            return $resp->json()['id'];
+            $twitch_user = $resp->json()['data'][0];
+            return $twitch_user['id'];
         } catch (Exception $e) {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
             return 'Not ok';
