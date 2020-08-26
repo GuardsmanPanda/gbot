@@ -21,9 +21,14 @@ class ExperimentalController extends Controller {
             $url .= "&scope=" . $r->get('scope');
             $url .= "&grant_type=authorization_code";
             $url .= "&code=" . $r->get('code');
-            $resp = Http::post($url)->json();
-            if (!in_array('expires_in', $resp)) Log::warning('Error on twitch Auth ' . json_encode($resp));
-            return 'ok - expires in: ' . $resp['expires_in'];
+
+            $resp = Http::post($url);
+            if ($resp->failed()) return 'Login failed.';
+
+            $token = $resp->json()['access_token'];
+            $resp = Http::withToken($token)->get("https://api.twitch.tv/helix/users");
+            if ($resp->failed()) return 'Getting Twitch ID Failed.';
+            return $resp->json()['id'];
         } catch (\Exception $e) {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
             return 'Not ok';
