@@ -31,6 +31,7 @@ class ExperimentalController extends Controller {
             }
 
             $token = $resp->json()['access_token'];
+            return 'stupiod';
             $resp = Http::withToken($token)
                 ->withHeaders(['Client-ID' => $this->client_id])
                 ->get("https://api.twitch.tv/helix/users");
@@ -38,6 +39,7 @@ class ExperimentalController extends Controller {
                 Log::warning($resp->body());
                 return 'Getting Twitch ID Failed.';
             }
+
             return $resp->json()['id'];
         } catch (\Exception $e) {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
