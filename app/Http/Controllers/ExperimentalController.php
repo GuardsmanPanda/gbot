@@ -23,11 +23,17 @@ class ExperimentalController extends Controller {
             $url .= "&code=" . $r->get('code');
 
             $resp = Http::post($url);
-            if ($resp->failed()) return 'Login failed.';
+            if ($resp->failed()) {
+                Log::warning($resp->body());
+                return 'Login failed.';
+            }
 
             $token = $resp->json()['access_token'];
             $resp = Http::withToken($token)->get("https://api.twitch.tv/helix/users");
-            if ($resp->failed()) return 'Getting Twitch ID Failed.';
+            if ($resp->failed()) {
+                Log::warning($resp->body());
+                return 'Getting Twitch ID Failed.';
+            }
             return $resp->json()['id'];
         } catch (\Exception $e) {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
