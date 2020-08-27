@@ -52,5 +52,6 @@ class ExperimentalController extends Controller {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
             return 'Not ok';
         }
+        // /.is_odd()
     }
 }

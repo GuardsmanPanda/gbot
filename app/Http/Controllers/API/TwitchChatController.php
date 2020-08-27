@@ -16,6 +16,6 @@ class TwitchChatController extends Controller {
             LEFT JOIN tuis AS tu ON tu.id = t.tui
             WHERE t.twitch_name = ? ", [mb_strtolower($name)])[0]->flag ?? 'none';
 
-        return response()->setMaxAge(0)->file(public_path("img/flags/$flag.png"));
+        return response()->file(public_path("img/flags/$flag.png"))->setMaxAge(0);
     }
 }
