@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dicegolf;
+use App\Models\Tui;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;

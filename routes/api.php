@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 |     return $request->user();
 */
 
-Route::get('twitch-chat-badge/{twitch_name}/{message_id}', 'API\TwitchChatController@get_badge');
+Route::get('twitch-chat-badge/{twitch_name}', 'API\TwitchChatController@get_badge');
 
