@@ -42,7 +42,7 @@
         </div>
         <div>
             @auth
-               <span><img src="/api/twitch-chat-badge/{from}/"> <a href="/admin/flag-selector"><h5>{{Auth::user()->name}}</h5></a></span>
+               <span><img src="{{public_path("static/img/flags/". Auth::user()->tui->flag.".png")}}" height="32"> <a href="/admin/flag-selector"><h5>{{Auth::user()->name}}</h5></a></span>
             @endauth
             @guest
                 <a class="btn btn-primary" href="https://id.twitch.tv/oauth2/authorize?client_id=q8q6jjiuc7f2ef04wmb7m653jd5ra8&redirect_uri=https://gman.bot/oauth/twitch&response_type=code&scope=user:read:email" role="button">Login With Twitch</a>
