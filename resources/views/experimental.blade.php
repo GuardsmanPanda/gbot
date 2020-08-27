@@ -7,4 +7,7 @@
         a) Doesn't work yet.
         b) Will allow me to store your email address.
     </div>
+    <div>
+        Hello: {{ Auth::user()->name }}
+    </div>
 @endsection

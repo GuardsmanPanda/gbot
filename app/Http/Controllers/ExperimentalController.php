@@ -6,6 +6,7 @@ use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -42,7 +43,9 @@ class ExperimentalController extends Controller {
             }
             $twitch_user = $resp->json()['data'][0];
 
+
             $user = User::firstOrCreate(['tui' => $twitch_user['id']], ['name' => $twitch_user['display_name']]);
+            Auth::login($user);
 
             return $twitch_user['id'];
         } catch (Exception $e) {
