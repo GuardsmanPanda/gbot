@@ -5,6 +5,6 @@
         <h1>Here Be Dragons</h1>
     </div>
     <div>
-        Hello: {{ Auth::user()->name }}
+        :D
     </div>
 @endsection
