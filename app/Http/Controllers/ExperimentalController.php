@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -40,6 +41,9 @@ class ExperimentalController extends Controller {
                 return 'Getting Twitch ID Failed.';
             }
             $twitch_user = $resp->json()['data'][0];
+
+            $user = User::firstOrCreate(['tui' => $twitch_user['id']], ['name' => $twitch_user['display_name']]);
+
             return $twitch_user['id'];
         } catch (Exception $e) {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
