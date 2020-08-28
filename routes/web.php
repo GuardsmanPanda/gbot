@@ -25,4 +25,9 @@ Route::prefix('dicegolf')->group(function () {
 });
 
 Route::get('experiments', 'ExperimentalController@index');
+Route::get('flag-selector', 'UserController@flag_selector');
+
+/*
+ * OAUTH CALLBACKS
+ */
 Route::get('oauth/twitch', 'ExperimentalController@login_twitch');

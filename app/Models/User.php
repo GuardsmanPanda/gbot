@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function tui() {
-        return $this->belongsTo('App\Mpdels\Tui', 'id', 'tui');
+        return $this->belongsTo('App\Models\Tui', 'id', 'tui');
     }
 }

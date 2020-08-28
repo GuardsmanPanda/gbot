@@ -47,7 +47,7 @@ class ExperimentalController extends Controller {
             $user = User::firstOrCreate(['tui' => $twitch_user['id']], ['name' => $twitch_user['display_name']]);
             Auth::login($user);
 
-            return $twitch_user['id'];
+            return redirect('/');
         } catch (Exception $e) {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
             return 'Not ok';
