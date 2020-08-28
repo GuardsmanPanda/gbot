@@ -40,14 +40,12 @@
                 </li>
             </ul>
         </div>
-        <div>
-            @auth
-               <span><img src="/static/img/flags/Denmark.png" height="32"> <a href="/admin/flag-selector"><h5>{{Auth::user()->name}}</h5></a></span>
-            @endauth
-            @guest
-                <a class="btn btn-primary" href="https://id.twitch.tv/oauth2/authorize?client_id=q8q6jjiuc7f2ef04wmb7m653jd5ra8&redirect_uri=https://gman.bot/oauth/twitch&response_type=code&scope=user:read:email" role="button">Login With Twitch</a>
-            @endguest
-        </div>
+        @auth
+            <div><img src="/static/img/flags/Denmark.png" height="32"></div> <div><a href="/admin/flag-selector"><h5>{{Auth::user()->name}}</h5></a></div>
+        @endauth
+        @guest
+            <div><a class="btn btn-primary" href="https://id.twitch.tv/oauth2/authorize?client_id=q8q6jjiuc7f2ef04wmb7m653jd5ra8&redirect_uri=https://gman.bot/oauth/twitch&response_type=code&scope=user:read:email" role="button">Login With Twitch</a></div>
+        @endguest
     </nav>
     @yield('content')
 </body>
