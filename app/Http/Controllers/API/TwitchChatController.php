@@ -27,7 +27,7 @@ class TwitchChatController extends Controller {
         //ADD SECRET WEBSITE ICON
         if ($db_res->tui) {
             $site_icon = imagecreatefrompng(public_path("static/img/misc/site_chat_icon.png"));
-            imagecopy($img, $site_icon, 198, 0, 0, 0, 84, 84);
+            imagecopy($img, $site_icon, 192, 0, 0, 0, 84, 84);
         }
 
 
