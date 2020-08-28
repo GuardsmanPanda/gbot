@@ -26,6 +26,6 @@ class TwitchChatController extends Controller {
         $flag_image = imagecreatefrompng(public_path("static/img/flags/$flag.png"));
         imagecopy($img, $flag_image, 286, 0, 0, 0, 114, 84);
 
-        return response()->file(imagepng($img));
+        return response()->header('content-type', 'image/png')->file(imagepng($img));
     }
 }
