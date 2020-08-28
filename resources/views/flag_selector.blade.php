@@ -5,6 +5,6 @@
         <h1>Here Be Dragons</h1>
     </div>
     <div>
-        {{Auth::user()->tui}}
+        {{Auth::user()->tui()->flag}}
     </div>
 @endsection
