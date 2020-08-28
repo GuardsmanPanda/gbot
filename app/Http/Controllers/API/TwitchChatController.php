@@ -25,7 +25,8 @@ class TwitchChatController extends Controller {
         //PUT FLAG ON BAD IMAGE
         $flag_image = imagecreatefrompng(public_path("static/img/flags/$flag.png"));
         imagecopy($img, $flag_image, 286, 0, 0, 0, 114, 84);
+        imagepng($img, storage_path("cache/chat_badge/$name"));
 
-        return response(imagepng($img))->header('Content-Type','image/png');
+        return response()->file(storage_path("cache/chat_badge/$name"));
     }
 }
