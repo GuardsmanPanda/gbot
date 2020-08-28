@@ -25,7 +25,7 @@ Route::prefix('dicegolf')->group(function () {
 });
 
 Route::get('experiments', 'ExperimentalController@index');
-Route::get('flag-selector', 'UserController@flag_selector');
+Route::get('admin/flag-selector', 'UserController@flag_selector');
 
 /*
  * OAUTH CALLBACKS
