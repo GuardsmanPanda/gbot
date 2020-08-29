@@ -28,12 +28,12 @@ class TwitchChatController extends Controller {
         //ADD SECRET WEBSITE ICON
         if ($db_res->tui) {
             $site_icon = imagecreatefrompng(public_path("static/img/misc/site_chat_icon.png"));
-            array_push($icons, ['width' => 148, 'img' => $site_icon]);
+            array_push($icons, ['width' => 94, 'img' => $site_icon]);
         }
 
         if ($db_res->hearts_bob) {
             $heart_icon = imagecreatefrompng(public_path("static/img/misc/hearts_bob_icon.png"));
-            array_push($icons, ['width' => 94, 'img' => $heart_icon]);
+            array_push($icons, ['width' => 148, 'img' => $heart_icon]);
         }
 
 
