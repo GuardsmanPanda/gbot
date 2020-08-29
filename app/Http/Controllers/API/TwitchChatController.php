@@ -28,7 +28,7 @@ class TwitchChatController extends Controller {
 
         if ($db_res->hearts_bob) {
             $heart_icon = imagecreatefrompng(public_path("static/img/misc/hearts_bob_icon.png"));
-            array_push($icons, ['width' => 97, 'img' => $heart_icon]);
+            array_push($icons, ['width' => 102, 'img' => $heart_icon]);
         }
 
         //ADD SECRET WEBSITE ICON
@@ -47,7 +47,7 @@ class TwitchChatController extends Controller {
 
         //ADD ALL ICONS
         foreach ($icons as $icon) {
-            $badge_width -= $icon['width'] + 10;
+            $badge_width -= $icon['width'] + 8;
             imagecopy($img, $icon['img'], $badge_width, 0, 0, 0, $icon['width'], 84);
         }
 
