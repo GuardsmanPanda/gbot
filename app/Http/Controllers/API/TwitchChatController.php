@@ -17,25 +17,34 @@ class TwitchChatController extends Controller {
             LEFT JOIN users AS u ON u.tui = t.tui
             WHERE t.twitch_name = ? ", [mb_strtolower($name)])[0];
 
-
-        //CREATE BADGE IMAGE
-        $img = imagecreatetruecolor(400, 84);
-        imagesavealpha($img, true);
-        $color = imagecolorallocatealpha($img, 0, 0, 0, 127);
-        imagefill($img, 0, 0, $color);
-
-        //ADD SECRET WEBSITE ICON
-        if ($db_res->tui) {
-            $site_icon = imagecreatefrompng(public_path("static/img/misc/site_chat_icon.png"));
-            imagecopy($img, $site_icon, 192, 0, 0, 0, 84, 84);
-        }
-
+        //ARRAY OF ICONS TO ADD TO BASE
+        $icons = [];
 
         //PUT FLAG ON IMAGE
         $flag = $db_res->flag ?? 'none';
         $flag_image = imagecreatefrompng(public_path("static/img/flags/$flag.png"));
-        imagecopy($img, $flag_image, 286, 0, 0, 0, 114, 84);
+        array_push($icons, ['width' => 114, 'img' => $flag_image]);
 
+        //ADD SECRET WEBSITE ICON
+        if ($db_res->tui) {
+            $site_icon = imagecreatefrompng(public_path("static/img/misc/site_chat_icon.png"));
+            array_push($icons, ['width' => 94, 'img' => $site_icon]);
+        }
+
+
+        //CREATE BADGE BASE IMAGE
+        $badge_width = 400;
+        $img = imagecreatetruecolor($badge_width, 84);
+        imagesavealpha($img, true);
+        $color = imagecolorallocatealpha($img, 0, 0, 0, 127);
+        imagefill($img, 0, 0, $color);
+
+        //ADD ALL ICONS
+        foreach ($icons as $icon) {
+            $badge_width -= $icon['width'];
+            imagecopy($img, $icon['img'], $badge_width, 0, 0, 0, $icon['width'], 84);
+        }
+        
 
         //Store the file, then load the file and send it on its way.
         imagepng($img, storage_path("cache/chat_badge/$name"));
