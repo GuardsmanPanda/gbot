@@ -7,4 +7,9 @@
     <div>
         {{Auth::user()->tui_data->flag}}
     </div>
+    <div>
+        @foreach($flags as $flag)
+            <div><img src="/static/img/flags/{{$flag}}.png">{{$flag}}</div>
+        @endforeach
+    </div>
 @endsection
