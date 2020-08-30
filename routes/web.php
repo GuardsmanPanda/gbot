@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('', 'HomeController@index');
+Route::get('','HomeController@index')->name('login');
 
 Route::prefix('dicegolf')->group(function () {
     Route::get('', 'DiceGolfController@index');
