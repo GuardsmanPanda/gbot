@@ -54,7 +54,7 @@ class TwitchChatController extends Controller {
 
         //Store the file, then load the file and send it on its way.
         imagepng($img, storage_path("cache/chat_badge/$name"));
-        usleep(50);
+        usleep(10000);
         return response()->file(storage_path("cache/chat_badge/$name"));
     }
 }
