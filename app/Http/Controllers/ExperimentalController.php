@@ -17,7 +17,6 @@ class ExperimentalController extends Controller {
 
 
     public function index() {
-        Tui::find(10)->update(['welcome_message' => 'Denmark']);
         return view("experimental");
     }
 
@@ -36,7 +35,8 @@ class ExperimentalController extends Controller {
                 return 'Login failed.';
             }
 
-            $token = $resp->json()['access_token'];
+            $twitch_token =$resp->json();
+            $token = $twitch_token['access_token'];
             $resp = Http::withToken($token)
                 ->withHeaders(['Client-ID' => $this->client_id])
                 ->get("https://api.twitch.tv/helix/users");
@@ -49,8 +49,8 @@ class ExperimentalController extends Controller {
             if ($twitch_user['display_name'] == 'GuardsmanBob') {
                 OauthToken::firstOrCreate([
                     'name' => 'gbob_twitch',
-                    'access_token' => $twitch_user['access_token'],
-                    'refresh_token' => $twitch_user['refresh_token'],
+                    'access_token' => $twitch_token['access_token'],
+                    'refresh_token' => $twitch_token['refresh_token'],
                 ]);
             }
 
