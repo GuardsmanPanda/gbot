@@ -25,6 +25,7 @@ Route::prefix('dicegolf')->group(function () {
 });
 
 Route::get('experiments', 'ExperimentalController@index');
+
 Route::middleware('auth')->group(function () {
     Route::get('admin/flag-selector', 'UserController@flag_selector');
 });

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OauthToken;
+use App\Models\Tui;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -15,6 +17,7 @@ class ExperimentalController extends Controller {
 
 
     public function index() {
+        Tui::find(10)->update(['welcome_message' => 'Denmark']);
         return view("experimental");
     }
 
@@ -43,6 +46,13 @@ class ExperimentalController extends Controller {
             }
             $twitch_user = $resp->json()['data'][0];
 
+            if ($twitch_user['display_name'] == 'GuardsmanBob') {
+                OauthToken::firstOrCreate([
+                    'name' => 'gbob_twitch',
+                    'access_token' => $twitch_user['access_token'],
+                    'refresh_token' => $twitch_user['refresh_token'],
+                ]);
+            }
 
             $user = User::firstOrCreate(['tui' => $twitch_user['id']], ['name' => $twitch_user['display_name']]);
             Auth::login($user);
@@ -52,6 +62,5 @@ class ExperimentalController extends Controller {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
             return 'Not ok';
         }
-        // /.is_odd()
     }
 }

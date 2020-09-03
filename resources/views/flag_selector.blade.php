@@ -9,7 +9,7 @@
     </div>
     <div>
         @foreach($flags as $flag)
-            <div><img src="/static/img/flags/{{$flag}}.png">{{$flag}}</div>
+            <div><a href="/admin/flag-selector?set-flag={{$flag}}"><img src="/static/img/flags/{{$flag}}.png">{{$flag}}</a></div>
         @endforeach
     </div>
 @endsection

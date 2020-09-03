@@ -10,6 +10,6 @@ class Tui extends Model {
     public $timestamps = false;
 
     protected $fillable = [
-        'flag',
+        'flag', 'welcome_message',
     ];
 }
