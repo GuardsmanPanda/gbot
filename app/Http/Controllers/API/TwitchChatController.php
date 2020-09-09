@@ -37,7 +37,6 @@ class TwitchChatController extends Controller {
             array_push($icons, ['width' => 84, 'img' => $site_icon]);
         }
 
-
         //CREATE BADGE BASE IMAGE
         $badge_width = 400;
         $img = imagecreatetruecolor($badge_width, 84);

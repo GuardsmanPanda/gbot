@@ -47,10 +47,10 @@ class ExperimentalController extends Controller {
             $twitch_user = $resp->json()['data'][0];
 
             if ($twitch_user['display_name'] == 'GuardsmanBob') {
-                OauthToken::firstOrCreate([
-                    'name' => 'gbob_twitch',
-                    'access_token' => $twitch_token['access_token'],
+                OauthToken::firstOrCreate([ 'name' => 'gbob_twitch',], [
                     'refresh_token' => $twitch_token['refresh_token'],
+                    'access_token' => $twitch_token['access_token'],
+                    
                 ]);
             }
 
