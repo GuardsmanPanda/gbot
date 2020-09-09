@@ -22,8 +22,10 @@ class TwitchChatController extends Controller {
 
         //PUT FLAG ON IMAGE
         $flag = $db_res->flag ?? 'none';
-        $flag_image = imagecreatefrompng(public_path("static/img/flags/$flag.png"));
-        array_push($icons, ['width' => 114, 'img' => $flag_image]);
+        if ($flag !== 'none') {
+            $flag_image = imagecreatefrompng(public_path("static/img/flags/$flag.png"));
+            array_push($icons, ['width' => 114, 'img' => $flag_image]);
+        }
 
 
         if ($db_res->hearts_bob) {
