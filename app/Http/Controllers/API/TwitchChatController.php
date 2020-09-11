@@ -11,7 +11,7 @@ class TwitchChatController extends Controller {
 
     public function get_badge(string $name) {
         $db_res = DB::select("
-            SELECT tu.flag, tu.hearts_bob, u.tui
+            SELECT tu.flag, tu.heart_color, u.tui
             FROM twitch_name_to_tui AS t
             LEFT JOIN tuis AS tu ON tu.id = t.tui
             LEFT JOIN users AS u ON u.tui = t.tui
@@ -28,8 +28,8 @@ class TwitchChatController extends Controller {
         }
 
 
-        if ($db_res->hearts_bob) {
-            $heart_icon = imagecreatefrompng(public_path("static/img/misc/hearts_bob_icon.png"));
+        if ($db_res->heart_color) {
+            $heart_icon = imagecreatefrompng(public_path("static/img/misc/heart_" . $db_res->heart_color . ".png"));
             array_push($icons, ['width' => 102, 'img' => $heart_icon]);
         }
 
