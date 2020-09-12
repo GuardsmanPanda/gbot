@@ -16,6 +16,7 @@
             autoColumns:true,
             autoColumnsDefinitions: [
                 {title:"Twitch Name", field:"name", headerSort:false},
+                {title:"Twitch Name2", field:"name", headerSort:false},
             ]
         });
     </script>
