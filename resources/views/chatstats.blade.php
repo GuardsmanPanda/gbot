@@ -14,6 +14,9 @@
             ajaxSorting: true,
             maxHeight: "75vh",
             autoColumns:true,
+            autoColumnsDefinitions: [
+                {title:"Twitch Name", field:"name", headerSort:false},
+            ]
         });
     </script>
 @endsection
