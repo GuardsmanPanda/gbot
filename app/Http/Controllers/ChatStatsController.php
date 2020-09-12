@@ -14,7 +14,8 @@ class ChatStatsController extends Controller {
 
     public function stats(Request $r) {
         return DB::select("
-            SELECT chat_lines
+            SELECT
+                   name, chat_lines, active_hours, idle_hours, bob_coins, updated_at
             FROM tuis
             ORDER BY chat_lines DESC
             LIMIT 250
