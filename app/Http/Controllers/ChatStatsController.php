@@ -11,7 +11,10 @@ class ChatStatsController extends Controller {
     public function index(Request $r) {
         $max_vals = DB::select("
             SELECT
-                   MAX(chat_lines) AS chat_lines, MAX(active_hours), MAX(idle_hours), MAX(bob_coins)
+                   MAX(chat_lines) AS chat_lines,
+                   MAX(active_hours) AS active_hours,
+                   MAX(idle_hours) AS idle_hours,
+                   MAX(bob_coins) AS bob_coins
             FROM tuis
         ")[0];
         return view('chatstats')->with([
