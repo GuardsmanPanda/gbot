@@ -36,7 +36,7 @@
                     <a class="nav-link" href="/experiments">Experimental</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/chat-stats" >Chat Stats</a>
+                    <a class="nav-link" href="/twitch-chat-stats" >Chat Stats</a>
                 </li>
             </ul>
         </div>

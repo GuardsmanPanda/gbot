@@ -16,7 +16,7 @@ class ChatStatsController extends Controller {
         return DB::select("
             SELECT chat_lines
             FROM tuis
-            ORDER BY chat_lines
+            ORDER BY chat_lines DESC
             LIMIT 250
         ");
     }
