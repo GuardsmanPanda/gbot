@@ -24,6 +24,9 @@ Route::prefix('dicegolf')->group(function () {
     Route::get('most-popular', 'DiceGolfController@most_popular');
 });
 
+Route::get('twitch-chat-stats', 'ChatStatsController@index');
+Route::get('twitch-chat-stats/stats', 'ChatStatsController@stats');
+
 Route::get('experiments', 'ExperimentalController@index');
 
 Route::middleware('auth')->group(function () {
