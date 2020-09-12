@@ -35,7 +35,7 @@
             columns:[
                 {title:"Rank", field:"rank", formatter:"rownum", headerSort:false},
                 {title:"Twitch Name", field:"name", headerSort:false},
-                {title:"Length", field:"length", width:210, headerSortStartingDir:"desc",
+                {title:"Length", field:"length", width:260, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$p_max->ml}},
@@ -44,7 +44,7 @@
                         legendColor:"#000000",
                         legendAlign:"center",
                     }},
-                {title:"Total", field:"sum", width:210, headerSortStartingDir:"desc",
+                {title:"Total", field:"sum", width:260, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams: {
                         min:0,
                         max:{{$p_max->ms}},

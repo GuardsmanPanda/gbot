@@ -16,7 +16,21 @@
             autoColumns:true,
             autoColumnsDefinitions: [
                 {title:"Twitch Name", field:"name", headerSort:false},
-                {title:"Twitch Name2", field:"name", headerSort:false},
+                {title:"Chat Lines", field:"chat_lines", width:260, headerSortStartingDir:"desc",
+                    formatter:"progress", formatterParams:{
+                        min:0,
+                        max:{{$max_vals->chat_lines}},
+                        color:"lightGreen",
+                        legend:true,
+                        legendColor:"#000000",
+                        legendAlign:"center",
+                    }},
+                {title:"Last Seen", width:128, field:"updated_at", mutator:tabulatorUTCToLocal,
+                    formatter:"datetimediff", formatterParams: {
+                        humanize:true,
+                        suffix: true
+                    }
+                },
             ]
         });
     </script>
