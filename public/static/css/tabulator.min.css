@@ -546,7 +546,7 @@
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    padding: 4px;
+    padding: 2px;
     border-right: 1px solid #aaa;
     vertical-align: middle;
     white-space: nowrap;

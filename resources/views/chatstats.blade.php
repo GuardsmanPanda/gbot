@@ -18,7 +18,7 @@
             maxHeight: "75vh",
             columns: [
                 {title:"Rank", field:"rank", formatter:"rownum", headerSort:false},
-                {title: "Flag", field:"flag", mutator: flag_icon_mutator,
+                {title: "Flag", field:"flag", mutator: flag_icon_mutator, headerSort: false,
                     formatter: "image", formatterParams: {
                         height:"26px",
                     }},
