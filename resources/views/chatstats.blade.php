@@ -18,7 +18,10 @@
             maxHeight: "75vh",
             columns: [
                 {title:"Rank", field:"rank", formatter:"rownum", headerSort:false},
-                {title: "Flag", field:"flag", mutator: flag_icon_mutator, formatter: "image"},
+                {title: "Flag", field:"flag", mutator: flag_icon_mutator,
+                    formatter: "image", formatterParams: {
+                        height:"26px",
+                    }},
                 {title:"Twitch Name", field:"name", headerSort:false},
                 {title:"Chat Lines", field:"chat_lines", width:240, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{
