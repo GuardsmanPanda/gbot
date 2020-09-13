@@ -9,14 +9,18 @@
 
 
     <script>
+        const flag_icon_mutator = function(value, data, type, params, component) {
+            return '/static/img/flags/' + value + ".png";
+        }
         const table = new Tabulator("#chat-stats", {
             ajaxURL: "/twitch-chat-stats/stats",
             ajaxSorting: true,
             maxHeight: "75vh",
             columns: [
                 {title:"Rank", field:"rank", formatter:"rownum", headerSort:false},
+                {title: "Flag", field:"flag", mutator: flag_icon_mutator, formatter: "image"},
                 {title:"Twitch Name", field:"name", headerSort:false},
-                {title:"Chat Lines", field:"chat_lines", width:260, headerSortStartingDir:"desc",
+                {title:"Chat Lines", field:"chat_lines", width:240, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$max_vals->chat_lines}},
@@ -26,7 +30,7 @@
                         legendAlign:"center",
                     }
                 },
-                {title:"Active Hours", field:"active_hours", width:260, headerSortStartingDir:"desc",
+                {title:"Active Hours", field:"active_hours", width:240, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$max_vals->active_hours}},
@@ -36,7 +40,7 @@
                         legendAlign:"center",
                     }
                 },
-                {title:"Idle Hours", field:"idle_hours", width:260, headerSortStartingDir:"desc",
+                {title:"Idle Hours", field:"idle_hours", width:240, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$max_vals->idle_hours}},
@@ -46,7 +50,7 @@
                         legendAlign:"center",
                     }
                 },
-                {title:"Bob Coins", field:"bob_coins", width:260, headerSortStartingDir:"desc",
+                {title:"Bob Coins", field:"bob_coins", width:240, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{
                         min:0,
                         max:{{$max_vals->bob_coins}},
