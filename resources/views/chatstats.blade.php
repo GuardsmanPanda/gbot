@@ -13,8 +13,8 @@
             ajaxURL: "/twitch-chat-stats/stats",
             ajaxSorting: true,
             maxHeight: "75vh",
-            autoColumns:true,
-            autoColumnsDefinitions: [
+            columns: [
+                {title:"Rank", field:"rank", formatter:"rownum", headerSort:false},
                 {title:"Twitch Name", field:"name", headerSort:false},
                 {title:"Chat Lines", field:"chat_lines", width:260, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{

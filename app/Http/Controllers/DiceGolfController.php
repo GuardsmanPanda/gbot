@@ -32,7 +32,7 @@ class DiceGolfController extends Controller {
             LEFT JOIN tuis AS t ON d.tui = t.id
             WHERE d.start = ?
             ORDER BY $order
-            LIMIT 100
+            LIMIT 200
             ", [$r->get('start')]);
     }
 
