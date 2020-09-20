@@ -33,7 +33,7 @@ class DiceGolfController extends Controller {
             WHERE d.start = ?
             ORDER BY $order
             LIMIT 200) AS q
-            ", [$r->get('start')])[0]
+            ", [$r->get('start')])[0]->json_agg
         )->header('content-type', 'application/json');
     }
 
