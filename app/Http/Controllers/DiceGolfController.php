@@ -24,16 +24,17 @@ class DiceGolfController extends Controller {
             case "created_at": $order = "created_at desc"; break;
             default: $order = "d.length desc, d.sum desc, d.created_at"; break;
         }
-        return DB::select("
-            SELECT
+        return response(DB::select("
+            SELECT json_agg(q) FROM (SELECT
                 t.name,
                 d.*
             FROM dicegolf AS d
             LEFT JOIN tuis AS t ON d.tui = t.id
             WHERE d.start = ?
             ORDER BY $order
-            LIMIT 200
-            ", [$r->get('start')]);
+            LIMIT 200) AS q
+            ", [$r->get('start')])[0]
+        )->header('content-type', 'application/json');
     }
 
     public function most_games() {

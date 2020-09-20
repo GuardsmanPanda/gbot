@@ -30,6 +30,7 @@ class ChatStatsController extends Controller {
             case "bob_coins": $order = "bob_coins"; break;
             default: $order = "chat_lines"; break;
         }
+
         return DB::select("
             SELECT
                    name, flag, chat_lines, active_hours, idle_hours, bob_coins, updated_at
