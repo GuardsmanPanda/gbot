@@ -24,6 +24,9 @@
 
 
     <script>
+        const flag_icon_mutator = function(value, data, type, params, component) {
+            return '/static/img/flags/' + value + ".png";
+        }
         const table = new Tabulator("#dg-stats", {
             ajaxURL: "/dicegolf/stats?start={{$start}}",
             ajaxSorting: true,
@@ -34,6 +37,10 @@
             layout: "fitData",
             columns:[
                 {title:"Rank", field:"rank", formatter:"rownum", headerSort:false},
+                {title: "Flag", field:"flag", mutator: flag_icon_mutator, headerSort: false,
+                    formatter: "image", formatterParams: {
+                        height:"26px",
+                    }},
                 {title:"Twitch Name", field:"name", headerSort:false},
                 {title:"Length", field:"length", width:260, headerSortStartingDir:"desc",
                     formatter:"progress", formatterParams:{

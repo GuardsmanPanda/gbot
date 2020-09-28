@@ -6,6 +6,7 @@ use App\Models\Tui;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Ramsey\Uuid\Type\Integer;
 
 class DiceGolfController extends Controller {
@@ -26,7 +27,7 @@ class DiceGolfController extends Controller {
         }
         return response(DB::select("
             SELECT json_agg(q) FROM (SELECT
-                t.name,
+                t.name, t.flag,
                 d.*
             FROM dicegolf AS d
             LEFT JOIN tuis AS t ON d.tui = t.id
