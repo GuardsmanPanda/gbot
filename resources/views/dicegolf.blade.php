@@ -4,8 +4,9 @@
     <div class="ribbon-content">
         <h1 class="ribbon-title">DiceGolf Stats</h1>
         <div class="row justify-content-between">
-            <h5 class="mt-2">Sort By Most Throws or Highest Sum!</h5>
+            <h5 class="mt-2 ml-3">Sort By Throws or Sum!</h5>
             <div class="ribbon-links">
+                <div class="t5">Select Game:</div>
                 <a href="/dicegolf?game=100">100</a>
                 <a href="/dicegolf?game=420">420</a>
             </div>
