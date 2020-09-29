@@ -7,8 +7,8 @@
             <h5 class="mt-2 ml-3">Sort By Throws or Sum!</h5>
             <div class="ribbon-links">
                 <div class="t5">Select Game:</div>
-                <a href="/dicegolf?game=100">100</a>
-                <a href="/dicegolf?game=420">420</a>
+                <a href="/dicegolf?start=100">100</a>
+                <a href="/dicegolf?start=420">420</a>
             </div>
         </div>
         <div id="dg-stats"></div>

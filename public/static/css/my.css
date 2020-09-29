@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5 {
 
 .t5 {
     font-family: 'Crete Round', serif;
+    float:right;
 }
 
 
@@ -77,17 +78,19 @@ h1, h2, h3, h4, h5 {
 
 .ribbon-links {
     float: right;
+    display: flex;
+    padding-right: 20px;
     padding-top: 8px;
-    font-size: 17px;
+    font-size: 1.25rem;
 }
 
 .ribbon-links > a {
     text-decoration: none;
+    margin-right: 5px;
     color: #292929;
 }
 
 .ribbon-links > a:hover {
     text-decoration: none;
-    font-size: 1.25rem;
     color: grey;
 }
