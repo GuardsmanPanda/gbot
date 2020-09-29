@@ -8,7 +8,7 @@
             <div class="ribbon-links">
                 <div class="t5">Select Game:</div>
                 @foreach($top_games as $game)
-                <a href="/dicegolf?start={{$game->Game}}">{{$game->Game}}</a>
+                <a href="/dicegolf?start={{$game->game}}">{{$game->game}}</a>
                 @endforeach
             </div>
         </div>
