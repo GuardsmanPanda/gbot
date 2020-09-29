@@ -70,3 +70,18 @@ h1, h2, h3, h4, h5 {
     border-radius: 0.313em 0 0 0.313em;
     box-shadow: inset -1px 2px 2px rgba(0,0,0,0.3);
 }
+
+.ribbon-links {
+    float: right;
+    padding-top: 8px;
+    font-size: 17px;
+}
+
+.ribbon-links > a {
+    text-decoration: none;
+    color: #292929;
+}
+
+.ribbon-links > a:hover {
+    color: grey;
+}
