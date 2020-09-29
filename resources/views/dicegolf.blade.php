@@ -2,13 +2,14 @@
 
 @section('content')
     <div class="ribbon-content">
-        <h1 class="ribbon-title">DiceGolf Stats</h1>
+        <h1 class="ribbon-title">DiceGolf Stats - {{$start}}</h1>
         <div class="row justify-content-between">
             <h5 class="mt-2 ml-3">Sort By Throws or Sum!</h5>
             <div class="ribbon-links">
                 <div class="t5">Select Game:</div>
-                <a href="/dicegolf?start=100">100</a>
-                <a href="/dicegolf?start=420">420</a>
+                @foreach($top_games as $game)
+                <a href="/dicegolf?start={{$game->Game}}">{{$game->Game}}</a>
+                @endforeach
             </div>
         </div>
         <div id="dg-stats"></div>

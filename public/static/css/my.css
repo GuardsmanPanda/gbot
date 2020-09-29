@@ -90,6 +90,10 @@ h1, h2, h3, h4, h5 {
     color: #292929;
 }
 
+.ribbon-links > .t5 {
+    margin-right: 5px
+}
+
 .ribbon-links > a:hover {
     text-decoration: none;
     color: grey;

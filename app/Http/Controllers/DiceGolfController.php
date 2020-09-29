@@ -16,7 +16,15 @@ class DiceGolfController extends Controller {
         $start = min($start, 2147483647);
         $start = max($start, 2);
         $p_max = DB::select(" SELECT MAX(length) AS ml, MAX(sum) AS ms FROM dicegolf WHERE start = ?", [$start])[0];
-        return view('dicegolf', compact('p_max', 'start'));
+        $top_games = DB::select("
+            SELECT
+                start AS Game, COUNT(start) AS Amount
+            FROM dicegolf
+            GROUP BY start
+            ORDER BY Amount desc
+            LIMIT 8
+            ");
+        return view('dicegolf', compact('p_max', 'start', 'top_games'));
     }
 
     public function stats(Request $r) {
