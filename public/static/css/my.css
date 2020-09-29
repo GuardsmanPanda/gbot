@@ -106,3 +106,7 @@ h1, h2, h3, h4, h5 {
     vertical-align: bottom;
     color: #292929;
 }
+
+.ribbon-links > a:last-child:after {
+    content: "";
+}

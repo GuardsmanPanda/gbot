@@ -22,7 +22,7 @@ class DiceGolfController extends Controller {
             FROM dicegolf
             GROUP BY start
             ORDER BY Amount desc
-            LIMIT 8
+            LIMIT 16
             ");
         return view('dicegolf', compact('p_max', 'start', 'top_games'));
     }
