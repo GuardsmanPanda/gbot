@@ -45,18 +45,14 @@ class ExperimentalController extends Controller {
                 return 'Getting Twitch ID Failed.';
             }
             $twitch_user = $resp->json()['data'][0];
-
             if ($twitch_user['display_name'] == 'GuardsmanBob') {
                 OauthToken::firstOrCreate([ 'name' => 'gbob_twitch',], [
                     'refresh_token' => $twitch_token['refresh_token'],
                     'access_token' => $twitch_token['access_token'],
-                    
                 ]);
             }
-
             $user = User::firstOrCreate(['tui' => $twitch_user['id']], ['name' => $twitch_user['display_name']]);
             Auth::login($user);
-
             return redirect('/');
         } catch (Exception $e) {
             Log::warning('Error on twitch Auth ' . $e->getMessage());
